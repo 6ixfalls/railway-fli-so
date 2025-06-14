@@ -20,4 +20,4 @@ COPY --from=core /tmp/source .
 RUN bun run build
 
 EXPOSE 3000
-CMD ["bun", "run", "--bun", "build"]
+CMD ["bun", "run", "--bun", "build/index.js"]
