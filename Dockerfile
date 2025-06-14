@@ -11,10 +11,10 @@ FROM oven/bun:latest
 ARG STRIPE_SECRET_KEY=sk_live_dummy
 
 WORKDIR /app
-COPY --from=core package.json package.json
+COPY --from=core /tmp/source/package.json package.json
 RUN bun install
 
-COPY --from=core /tmp/source /app
+COPY --from=core /tmp/source .
 RUN bun run build
 
 EXPOSE 3000
